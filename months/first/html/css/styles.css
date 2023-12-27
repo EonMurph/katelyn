@@ -1,0 +1,26 @@
+body {
+    height: 100vh;
+    background: #FF8CD0;
+}
+
+img {
+    margin: 200px auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 10em;
+}
+p {
+    font-size: 3em;
+    text-align: center;
+}
+small {
+    font-size: 0.3em;
+}
+
+img, h1, p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
