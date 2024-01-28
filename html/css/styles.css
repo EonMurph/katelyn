@@ -1,80 +1,16 @@
 /* | Site-Wide Rules */
 body {
-  background: #ff8cd0;
+  background: #FF8CD0;
 }
 
-/* | Nav Rules */
-nav div.years {
-  display: flex;
-  flex-flow: row nowrap;
-  height: 18em;
-
-  & div.months {
-    width: 14em;
-
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-end;
-  }
-  @media (min-width: 600px) {
-    & div.months {
-      flex-wrap: wrap;
-      padding: 0px 4em;
-
-      & > a {
-        width: 14em;
-      }
-    }
-  }
-
-  & > p {
-    box-sizing: border-box;
-    width: 8em;
-    margin: 0px 5px;
-  }
-}
-
-nav div.years > div.months {
-  border-left: solid 1px black;
-
-  & a {
-    margin: 0px auto;
-  }
-}
-
-nav div.years :is(a, p) {
-  height: 3em;
+header {
   text-align: center;
 }
 
-@media (hover: hover) {
-  nav div.years:has(> p:not(:hover)) {
-    /* makes months only appear on hover over year */
-    & div.months:not(:hover) {
-      /* makes months stay on hover over months */
-      display: none;
-    }
-  }
-}
-
-nav :is(a, p) {
-  display: block;
-
-  @media (hover: hover) {
-    && > span {
-      display: none;
-    }
-    &:hover > span {
-      /* makes date appear on hover */
-      display: inline;
-    }
-  }
-}
-
-/* | Header Rules */
-header {
-  > img {
-    height: 5em;
-    grid-area: top;
+/* | Timeline Rules */
+#timeline {
+  div.content > h2 {
+    background: white;
+    color: white;
   }
 }
