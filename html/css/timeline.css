@@ -1,0 +1,77 @@
+/* | Site-Wide Rules */
+:root {
+  --stem-color: #04c53f;
+  --leaf-color: color-mix(in srgb, var(--stem-color), #555);
+  --event-margin: 0.5em;
+}
+
+/* | Timeline Rules */
+#timeline {
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0px;
+
+  /* || Individual Timeline Entries Rules */
+  section.timeline-content {
+    border-radius: 0 70px;
+    background-color: var(--leaf-color);
+    width: 40%;
+    margin-left: var(--event-margin);
+    padding: 0.8em;
+
+    &.event {
+      background-color: color-mix(in srgb, var(--leaf-color), #555);
+
+      > h3:has(+ p > span) {
+        margin-bottom: 0px;
+      }
+    }
+
+    &:nth-child(even) {
+      margin-left: auto;
+      margin-right: var(--event-margin);
+      transform: scaleX(-1); /* flips leaf to be mirror image */
+      transform-origin: center;
+
+      > * {
+        transform: scaleX(-1); /* undoes mirror flip on text */
+      }
+    }
+
+    /* ||| Entry Text Rules */
+    > h2 {
+      font-size: 1.2em;
+    }
+    > h3 {
+      font-size: 1.1em;
+    }
+    > * {
+      text-align: center;
+    }
+    > p {
+      font-style: italic;
+      margin-bottom: 3px;
+
+      &:has(> span) {
+        margin-top: 0px;
+      }
+
+      > span {
+        font-size: 13px;
+        font-style: normal;
+      }
+    }
+  }
+
+  /* || Timeline Bar */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 5px;
+    background-color: var(--stem-color);
+    transform: translateX(-50%);
+  }
+}
