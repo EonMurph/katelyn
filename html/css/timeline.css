@@ -12,17 +12,17 @@
   padding: 20px 0px;
 
   /* || Individual Timeline Entries Rules */
-  section.timeline-content {
+  details.timeline-content {
     border-radius: 0 70px;
     background-color: var(--leaf-color);
     width: 40%;
     margin-left: var(--event-margin);
-    padding: 0.8em;
+    padding: 1em;
 
     &.event {
       background-color: color-mix(in srgb, var(--leaf-color), #555);
 
-      > h3:has(+ p > span) {
+      > summary:has(+ p > span) {
         margin-bottom: 0px;
       }
     }
@@ -39,11 +39,14 @@
     }
 
     /* ||| Entry Text Rules */
-    > h2 {
+    &.anniversary > summary {
       font-size: 1.2em;
     }
-    > h3 {
+    &.event > summary {
       font-size: 1.1em;
+    }
+    > summary {
+      margin-bottom: 0px;
     }
     > * {
       text-align: center;
@@ -51,6 +54,7 @@
     > p {
       font-style: italic;
       margin-bottom: 3px;
+      margin-top: 8px;
 
       &:has(> span) {
         margin-top: 0px;
